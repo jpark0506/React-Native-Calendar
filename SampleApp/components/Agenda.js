@@ -3,7 +3,7 @@ import {Alert, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 
 //사이트의 example을 참고했습니다
-export default class Agenda extends Component {
+export default class AgendaScreen extends Component {
   constructor(props) {
     super(props);
 
