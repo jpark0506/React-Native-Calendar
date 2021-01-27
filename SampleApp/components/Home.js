@@ -11,7 +11,6 @@ export default function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('Calendar')}
         />
          <Button
-         
           title="Go to Agenda"
           onPress={() => navigation.navigate('Agenda')}
         />
