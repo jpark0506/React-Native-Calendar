@@ -14,6 +14,11 @@ export default function HomeScreen({ navigation }) {
           title="Go to Agenda"
           onPress={() => navigation.navigate('Agenda')}
         />
+         <Button
+          title="Go to Holiday"
+          onPress={() => navigation.navigate('Holiday')}
+        />
       </View>
+      
     );
   }

@@ -1,8 +1,27 @@
 import * as React from 'react';
 import { View, Text,Button } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import {CalendarList} from 'react-native-calendars'
+import Moment from 'react-moment';
+export function NewView({route}){
 
-export default function CalendarScreen({ navigation }) {
+  const { day } = route.params
+  //day는 json형테의 object입ㄴ디ㅏ
+  console.log(JSON.stringify(day))
+  const dateString = day.dateString
+  //로그기록 확인해보세요
+  console.log(date)
+  //위의 date는 새로운 function,component을 생성하거나 내부에서 moment로 다루면 됩니다
+  return(
+    <View>
+          <Text>
+            {dateString}
+          </Text>
+    </View>
+  )
+}
+
+export function CalendarScreen({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <CalendarList
@@ -14,8 +33,11 @@ export default function CalendarScreen({ navigation }) {
             minDate={'2020-01-01'}
             //최대 날짜
             maxDate={'2020-12-31'}
+          
             // 날짜가 눌렸을 때 어떤 것을 실행하도록 하는 핸들러 console.log부분에 다른 component나 함수를 넣어주시면 됩니다
-            onDayPress={(day) => {console.log('selected day', day)}}
+            // day object 넘겨주기
+            // https://reactnavigation.org/docs/params/ 참고해주세요
+            onDayPress={(day) => {navigation.navigate('NewView',{day: day});}}
             // 날짜가 길게 눌렸을 때 어떤 것을 실행하도록 하는 핸들러 console.log부분에 다른 component나 함수를 넣어주시면 됩니다
             onDayLongPress={(day) => {console.log('selected day', day)}}
             // 캘린더 맨 위에 있는 날짜 포맷을 결정해줍니다 다른 형태로 수정하고 싶으시면
