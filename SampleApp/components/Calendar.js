@@ -3,6 +3,8 @@ import { View, Text,Button } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {CalendarList} from 'react-native-calendars'
 import Moment from 'react-moment';
+
+
 export function NewView({route}){
 
   const { day } = route.params
@@ -10,7 +12,7 @@ export function NewView({route}){
   console.log(JSON.stringify(day))
   const dateString = day.dateString
   //로그기록 확인해보세요
-  console.log(date)
+  console.log(dateString)
   //위의 date는 새로운 function,component을 생성하거나 내부에서 moment로 다루면 됩니다
   return(
     <View>
